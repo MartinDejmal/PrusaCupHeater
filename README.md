@@ -26,4 +26,25 @@ Assembly instructions:
 
 Firmware instructions:
 - flash Tasmota-Sensors into the Wemos D1
-- apply following settings (TBD)
+- apply following template: {"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}
+
+Home Assistant configuration:
+Prerequisite: Tasmota integration working with MQTT server
+- if you want to control the Cup Heater via Home Assistant, you need to define a thermostat
+- open your configuration.yaml and add following:
+
+climate:
+  - platform: generic_thermostat
+    unique_id: prusa_cup_heater
+    name: PrusaCupHeater
+    heater: switch.tasmota_2
+    target_sensor: sensor.tasmota_ds18b20_temperature
+    min_temp: 40
+    max_temp: 120
+
+Replace switch.tasmota_2 and sensor.tasmota_ds18b20_temperature by valid entities in your setup. 
+
+
+TO DO:
+- include WS2812b LED strip control
+- add berry script for autonomous operation
