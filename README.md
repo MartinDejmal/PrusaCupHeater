@@ -38,7 +38,7 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
   - connect power pins from MOSFET trigger into the heat bed tile
 
 ## Firmware instructions
-- flash Tasmota-Sensors into the Wemos D1
+- flash `tasmota-sensors` into the Wemos D1, you can use [Tasmota Web Installer](https://tasmota.github.io/install/)
 - apply following template: `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}`
 
 ## Home Assistant configuration
