@@ -20,11 +20,11 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 | Component/Module | CZ | International |
 | --- | --- | --- |
 |Prusa XL Heatbed tile|[prusa3d.com](https://www.prusa3d.com/cs/produkt/heatbed-tile/)||
-|Wemos D1 Mini| [laskakit.cz](https://www.laskakit.cz/wemos-d1-mini-esp8266-wifi-modul/)||
-|DS18B20|[laskakit.cz](https://www.laskakit.cz/dallas-digitalni-cidlo-teploty-ds18b20--to-92/)||
-|MOSFET module|[laskakit.cz](https://www.laskakit.cz/pwm-mosfet-modul-d4184--40vdc-50a/)||
+|Wemos D1 Mini| [laskakit.cz](https://www.laskakit.cz/wemos-d1-mini-esp8266-wifi-modul/)|[Aliexpress](https://www.aliexpress.com/item/1005006473868001.html)|
+|DS18B20|[laskakit.cz](https://www.laskakit.cz/dallas-digitalni-cidlo-teploty-ds18b20--to-92/)|[Aliexpress](https://www.aliexpress.com/item/1005006105455874.html)|
+|MOSFET module|[laskakit.cz](https://www.laskakit.cz/pwm-mosfet-modul-d4184--40vdc-50a/)|[Aliexpress](https://www.aliexpress.com/item/1005004768394186.html)|
 |USB-C PD trigger|[laskakit.cz](https://www.laskakit.cz/laskakit-usb-c-pd-ch224k-prepinac-napajeciho-napeti/)||
-|Step-down|[laskakit.cz](https://www.laskakit.cz/mikro-step-down-menic--nastavitelny/)||
+|Step-down|[laskakit.cz](https://www.laskakit.cz/mikro-step-down-menic--nastavitelny/)|[Aliexpress](https://www.aliexpress.com/item/32807048132.html)|
 |WS2812 LED strip|[laskakit.cz](https://www.laskakit.cz/led-pasek-neopixel-ws2812b-60led-m-ip65-5m-cerny/)||
 
 
@@ -60,3 +60,6 @@ Replace `switch.tasmota_2` and `sensor.tasmota_ds18b20_temperature` by relevant 
 ## To do list
 - include WS2812b LED strip control
 - add berry script for autonomous operation
+- add touch sensor to control operation
+- add 128x32 OLED display with temperature and status reading
+- add cup presence detection
