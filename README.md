@@ -39,7 +39,7 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 
 ## Firmware instructions
 - flash Tasmota-Sensors into the Wemos D1
-- apply following template: {"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}
+- apply following template: `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}`
 
 ## Home Assistant configuration
 Prerequisite: Tasmota integration working with MQTT server
