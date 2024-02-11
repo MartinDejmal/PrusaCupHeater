@@ -19,13 +19,13 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 
 | Component/Module | CZ | International |
 | --- | --- | --- |
-|Prusa XL Heatbed tile|||
+|Prusa XL Heatbed tile|[prusa3d.com](https://www.prusa3d.com/cs/produkt/heatbed-tile/)||
 |Wemos D1 Mini| [laskakit.cz](https://www.laskakit.cz/wemos-d1-mini-esp8266-wifi-modul/)||
 |DS18B20|[laskakit.cz](https://www.laskakit.cz/dallas-digitalni-cidlo-teploty-ds18b20--to-92/)||
-|MOSFET module|||
-|USB-C PD trigger|||
-|Step-down|||
-|WS2812 LED strip|||
+|MOSFET module|[laskakit.cz](https://www.laskakit.cz/pwm-mosfet-modul-d4184--40vdc-50a/)||
+|USB-C PD trigger|[laskakit.cz](https://www.laskakit.cz/laskakit-usb-c-pd-ch224k-prepinac-napajeciho-napeti/)||
+|Step-down|[laskakit.cz](https://www.laskakit.cz/mikro-step-down-menic--nastavitelny/)||
+|WS2812 LED strip|[laskakit.cz](https://www.laskakit.cz/led-pasek-neopixel-ws2812b-60led-m-ip65-5m-cerny/)||
 
 
 
