@@ -15,6 +15,19 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 * optional: 3 LED strip WS2812B
 * 3D Printed box
 
+### Purchase links
+
+| Component/Module | CZ | International |
+| --- | --- | --- |
+|Prusa XL Heatbed tile|||
+|Wemos D1 Mini| [laskakit.cz](https://www.laskakit.cz/wemos-d1-mini-esp8266-wifi-modul/)||
+|DS18B20|[laskakit.cz](https://www.laskakit.cz/dallas-digitalni-cidlo-teploty-ds18b20--to-92/)||
+|MOSFET module|||
+|USB-C PD trigger|||
+|Step-down|||
+|WS2812 LED strip|||
+
+
 
 ## Assembly instructions
 - wire up the modules as per diagram below
@@ -32,26 +45,18 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 Prerequisite: Tasmota integration working with MQTT server
 - if you want to control the Cup Heater via Home Assistant, you need to define a thermostat
 - open your configuration.yaml and add following:
-
+```
   climate:
-  
     - platform: generic_thermostat
-  
-      unique_id: prusa_cup_heater
-
+      unique_id: prusa_cup_heate
       name: PrusaCupHeater
-
       heater: switch.tasmota_2
-
       target_sensor: sensor.tasmota_ds18b20_temperature
-
       min_temp: 40
-
       max_temp: 120
+```
+Replace `switch.tasmota_2` and `sensor.tasmota_ds18b20_temperature` by relevant heater switch and temperature sensors entities in your setup. 
 
-Replace switch.tasmota_2 and sensor.tasmota_ds18b20_temperature by valid entities in your setup. 
-
-
-TO DO:
+## To do list
 - include WS2812b LED strip control
 - add berry script for autonomous operation
