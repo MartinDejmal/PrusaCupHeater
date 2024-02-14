@@ -82,6 +82,8 @@ Note: berry scripting is not supported on ESP8266 devices.
 
 ✅ add berry script for autonomous operation
 
-- add touch sensor to control operation
-- add 128x32 OLED display with temperature and status reading
-- add cup presence detection
+🔲 add touch sensor to control operation
+
+🔲 add 128x32 OLED display with temperature and status reading
+
+🔲 add cup presence detection
