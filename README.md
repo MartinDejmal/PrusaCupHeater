@@ -20,12 +20,12 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 | Component/Module | CZ | International |
 | --- | --- | --- |
 |Prusa XL Heatbed tile|[prusa3d.com](https://www.prusa3d.com/cs/produkt/heatbed-tile/)||
-|Wemos D1 Mini| [laskakit.cz](https://www.laskakit.cz/wemos-d1-mini-esp8266-wifi-modul/)|[Aliexpress](https://www.aliexpress.com/item/1005006473868001.html)|
-|DS18B20|[laskakit.cz](https://www.laskakit.cz/dallas-digitalni-cidlo-teploty-ds18b20--to-92/)|[Aliexpress](https://www.aliexpress.com/item/1005006105455874.html)|
+|Wemos D1 Mini| [laskakit.cz](https://www.laskakit.cz/wemos-d1-mini-esp8266-wifi-modul/) [pajenicko.cz](https://pajenicko.cz/wemos-d1-mini-wifi-esp8266-esp-12f-microusb) | [Aliexpress](https://www.aliexpress.com/item/1005006473868001.html)|
+|DS18B20|[laskakit.cz](https://www.laskakit.cz/dallas-digitalni-cidlo-teploty-ds18b20--to-92/) [pajenicko.cz](https://pajenicko.cz/digitalni-cidlo-teploty-dallas-ds18b20) | [Aliexpress](https://www.aliexpress.com/item/1005006105455874.html)|
 |MOSFET module|[laskakit.cz](https://www.laskakit.cz/pwm-mosfet-modul-d4184--40vdc-50a/)|[Aliexpress](https://www.aliexpress.com/item/1005004768394186.html)|
 |USB-C PD trigger|[laskakit.cz](https://www.laskakit.cz/laskakit-usb-c-pd-ch224k-prepinac-napajeciho-napeti/)||
-|Step-down|[laskakit.cz](https://www.laskakit.cz/mikro-step-down-menic--nastavitelny/)|[Aliexpress](https://www.aliexpress.com/item/32807048132.html)|
-|WS2812 LED strip|[laskakit.cz](https://www.laskakit.cz/led-pasek-neopixel-ws2812b-60led-m-ip65-5m-cerny/)||
+|Step-down|[laskakit.cz](https://www.laskakit.cz/mikro-step-down-menic--nastavitelny/) [pajenicko.cz](https://pajenicko.cz/miniaturni-menic-napeti-step-down-4-dot-5v-24v-na-0-dot-8v17v-az-3a)|[Aliexpress](https://www.aliexpress.com/item/32807048132.html)|
+|WS2812 LED strip|[laskakit.cz](https://www.laskakit.cz/led-pasek-neopixel-ws2812b-60led-m-ip65-5m-cerny/) [pajenicko.cz](https://pajenicko.cz/inteligentni-rgb-led-pasek-1m-ws2812-neopixel-60led-m-18w-m)||
 
 
 
