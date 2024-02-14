@@ -78,8 +78,10 @@ You can adjust target temperature and temperature hysteresis limits as per your 
 Note: berry scripting is not supported on ESP8266 devices.
 
 ## To do list
-✅ - include WS2812b LED strip control
-✅ - add berry script for autonomous operation
+✅ include WS2812b LED strip control
+
+✅ add berry script for autonomous operation
+
 - add touch sensor to control operation
 - add 128x32 OLED display with temperature and status reading
 - add cup presence detection
