@@ -25,21 +25,25 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 |MOSFET module|[laskakit.cz](https://www.laskakit.cz/pwm-mosfet-modul-d4184--40vdc-50a/)|[Aliexpress](https://www.aliexpress.com/item/1005004768394186.html)|
 |USB-C PD trigger|[laskakit.cz](https://www.laskakit.cz/laskakit-usb-c-pd-ch224k-prepinac-napajeciho-napeti/)||
 |Step-down|[laskakit.cz](https://www.laskakit.cz/mikro-step-down-menic--nastavitelny/), [pajenicko.cz](https://pajenicko.cz/miniaturni-menic-napeti-step-down-4-dot-5v-24v-na-0-dot-8v17v-az-3a)|[Aliexpress](https://www.aliexpress.com/item/32807048132.html)|
-|WS2812 LED strip|[laskakit.cz](https://www.laskakit.cz/led-pasek-neopixel-ws2812b-60led-m-ip65-5m-cerny/), [pajenicko.cz](https://pajenicko.cz/inteligentni-rgb-led-pasek-1m-ws2812-neopixel-60led-m-18w-m)||
+|WS2812 LED strip (60 LED/m; 3 LEDs total) |[laskakit.cz](https://www.laskakit.cz/led-pasek-neopixel-ws2812b-60led-m-ip65-5m-cerny/), [pajenicko.cz](https://pajenicko.cz/inteligentni-rgb-led-pasek-1m-ws2812-neopixel-60led-m-18w-m)||
 
 
 
 ## Assembly instructions
 - wire up the modules as per diagram below
-  - DS18B20 to D7 on Wemos D1, glue the sensor to the bottom of the heat bed tile
-  - power MOSFET module to D1 on Wemos D1
+  - DS18B20 to pin D7 on Wemos, glue the sensor to the bottom of the heat bed tile  
+  - power MOSFET module to pin D1 on Wemos
+  - (optional) WS2812 to pin D6 on Wemos 
 - jumper the USB-C trigger to output 20V
   - wire 20V out from the PD trigger into the MOSFET switching part
   - connect power pins from MOSFET trigger into the heat bed tile
 
+
 ## Firmware instructions
 - flash `tasmota-sensors` into the Wemos D1, you can use [Tasmota Web Installer](https://tasmota.github.io/install/)
-- apply following template: `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}`
+- apply following template:
+  - without WS2812 `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}`
+  - with WS2812 `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,1376,1312,0,0,0,0],"FLAG":0,"BASE":18}`
 
 ## Home Assistant configuration
 Prerequisite: Tasmota integration working with MQTT server
@@ -60,18 +64,22 @@ Replace `switch.tasmota_2` and `sensor.tasmota_ds18b20_temperature` by relevant 
 
 
 ## Standalone operation configuration
-It is possible to enable simple heating control using Tasmota Rules. To do this, open Tasmota Console and enter following commands:
-- `Rule1 1`
-- `Rule2 1`
-- `Rule1 ON Tele-DS18B20#Temperature<55 DO Power1 1 ENDON`
-- `Rule2 ON Tele-DS18B20#Temperature>65 DO Power1 0 ENDON`
+It is possible to enable simple heating control using Tasmota Rules. To do this, open Tasmota Console and create two rules by entering following commands:
+  - `Rule1 ON Tele-DS18B20#Temperature<55 DO Power1 1 ENDON`
+  - `Rule2 ON Tele-DS18B20#Temperature>65 DO Power1 0 ENDON`
+- enable the rules using following commands:
+  - `Rule1 1`
+  - `Rule2 1`
+- if you have WS2812 add third rule to light it up when heating is active:
+  - `Rule3 ON Power1#State=1 DO LedPower 1 ENDON ON Power1#State=0 DO LedPower 0 ENDON`
+  - enable the rule: `Rule3 1`
 
 You can adjust target temperature and temperature hysteresis limits as per your requirements. This setup has target 60°C while allowing +/-5°C hysteresis.
 Note: berry scripting is not supported on ESP8266 devices.
 
 ## To do list
-- include WS2812b LED strip control
-- add berry script for autonomous operation
+✅ - include WS2812b LED strip control
+✅ - add berry script for autonomous operation
 - add touch sensor to control operation
 - add 128x32 OLED display with temperature and status reading
 - add cup presence detection
