@@ -1,12 +1,12 @@
 # PrusaCupHeater
 
-PrusaCupHeater is a project aiming to utilize spare / waste heatbedlets (heat bed tiles) from Prusa XL printer. 
+PrusaCupHeater is a project aiming to utilize spare / waste heatbedlets (heat bed tiles) from **Prusa XL printer**. 
 
 The ultimate objective was to build a cup heater that can be powered from USB-C PD power supply and connected to Home Assistant. 
 
 ## Required parts
 
-* Prusa XL Heat Bed Tile
+* Prusa XL Heat Bed Tile (obviously)
 * Wemos D1 Mini ESP8266 module (or similar)
 * DS18B20 temperature sensor (or any alternative)
 * power MOSFET/PWM breakout board
@@ -31,19 +31,19 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 
 ## Assembly instructions
 - wire up the modules as per diagram below
-  - DS18B20 to pin D7 on Wemos, glue the sensor to the bottom of the heat bed tile  
-  - power MOSFET module to pin D1 on Wemos
-  - (optional) WS2812 to pin D6 on Wemos 
+  - **DS18B20** to pin D7 on **Wemos D1**, glue the sensor to the bottom of the heat bed tile  
+  - power MOSFET module to pin D1 on **Wemos D1**
+  - (optional) **WS2812** to pin D6 on **Wemos D1** 
 - jumper the USB-C trigger to output 20V
   - wire 20V out from the PD trigger into the MOSFET switching part
   - connect power pins from MOSFET trigger into the heat bed tile
 
 
 ## Firmware instructions
-- flash `tasmota-sensors` into the Wemos D1, you can use [Tasmota Web Installer](https://tasmota.github.io/install/)
+- flash `tasmota-sensors` into the **Wemos D1**, you can use [Tasmota Web Installer](https://tasmota.github.io/install/)
 - apply following template:
-  - without WS2812 `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}`
-  - with WS2812 `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,1376,1312,0,0,0,0],"FLAG":0,"BASE":18}`
+  - without **WS2812** `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,0,1312,0,0,0,0],"FLAG":0,"BASE":18}`
+  - with **WS2812** `{"NAME":"PrusaCupHeater","GPIO":[0,0,0,0,0,224,0,0,1376,1312,0,0,0,0],"FLAG":0,"BASE":18}`
 
 ## Home Assistant configuration
 Prerequisite: Tasmota integration working with MQTT server
@@ -60,21 +60,21 @@ Prerequisite: Tasmota integration working with MQTT server
       max_temp: 120
 ```
 Replace `switch.tasmota_2` and `sensor.tasmota_ds18b20_temperature` by relevant heater switch and temperature sensors entities in your setup. 
-- change Logging interval on your Tasmota to lowest possible value (10s) - Configuration / Configure Logging / Telemetry Period
+- change **Logging interval** on your Tasmota to lowest possible value (10s) - **Configuration -> Configure Logging -> Telemetry Period**
 
 
 ## Standalone operation configuration
-It is possible to enable simple heating control using Tasmota Rules. To do this, open Tasmota Console and create two rules by entering following commands:
+It is possible to enable simple heating control using Tasmota Rules. To do this, open **Tasmota Console** and create two rules by entering following commands:
   - `Rule1 ON Tele-DS18B20#Temperature<55 DO Power1 1 ENDON`
   - `Rule2 ON Tele-DS18B20#Temperature>65 DO Power1 0 ENDON`
 - enable the rules using following commands:
   - `Rule1 1`
   - `Rule2 1`
-- if you have WS2812 add third rule to light it up when heating is active:
+- if you have **WS2812** add third rule to light it up when heating is active:
   - `Rule3 ON Power1#State=1 DO Power2 1 ENDON ON Power1#State=0 DO Power2 0 ENDON`
   - enable the rule: `Rule3 1`
 
-You can adjust target temperature and temperature hysteresis limits as per your requirements. This setup has target 60°C while allowing +/-5°C hysteresis.
+You can adjust target temperature and temperature hysteresis limits as per your requirements. The setup described above has target 60°C while allowing +/-5°C hysteresis.
 Note: berry scripting is not supported on ESP8266 devices.
 
 ## To do list
