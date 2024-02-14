@@ -65,6 +65,7 @@ It is possible to enable simple heating control using Tasmota Rules. To do this,
 - `Rule2 1`
 - `Rule1 ON Tele-DS18B20#Temperature<55 DO Power1 1 ENDON`
 - `Rule2 ON Tele-DS18B20#Temperature>65 DO Power1 0 ENDON`
+
 You can adjust target temperature and temperature hysteresis limits as per your requirements. This setup has target 60°C while allowing +/-5°C hysteresis.
 Note: berry scripting is not supported on ESP8266 devices.
 
