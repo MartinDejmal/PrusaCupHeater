@@ -30,7 +30,7 @@ The ultimate objective was to build a cup heater that can be powered from USB-C 
 
 
 ## Assembly instructions
-- wire up the modules as per diagram below
+- wire up the modules following way:
   - **DS18B20** to pin D7 on **Wemos D1**, glue the sensor to the bottom of the heat bed tile  
   - power MOSFET module to pin D1 on **Wemos D1**
   - (optional) **WS2812** to pin D6 on **Wemos D1** 
@@ -81,6 +81,10 @@ Note: berry scripting is not supported on ESP8266 devices.
 ✅ include WS2812b LED strip control
 
 ✅ add berry script for autonomous operation
+
+🔲 add pictures to the description
+
+🔲 add wiring diagram
 
 🔲 add touch sensor to control operation
 
