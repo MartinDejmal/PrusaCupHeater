@@ -71,7 +71,7 @@ It is possible to enable simple heating control using Tasmota Rules. To do this,
   - `Rule1 1`
   - `Rule2 1`
 - if you have WS2812 add third rule to light it up when heating is active:
-  - `Rule3 ON Power1#State=1 DO LedPower 1 ENDON ON Power1#State=0 DO LedPower 0 ENDON`
+  - `Rule3 ON Power1#State=1 DO LedPower 1 ENDON ON Power1#State=0 DO Power2 0 ENDON`
   - enable the rule: `Rule3 1`
 
 You can adjust target temperature and temperature hysteresis limits as per your requirements. This setup has target 60°C while allowing +/-5°C hysteresis.
