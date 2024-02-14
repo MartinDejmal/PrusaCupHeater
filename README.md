@@ -56,6 +56,17 @@ Prerequisite: Tasmota integration working with MQTT server
       max_temp: 120
 ```
 Replace `switch.tasmota_2` and `sensor.tasmota_ds18b20_temperature` by relevant heater switch and temperature sensors entities in your setup. 
+- change Logging interval on your Tasmota to lowest possible value (10s) - Configuration / Configure Logging / Telemetry Period
+
+
+## Standalone operation configuration
+It is possible to enable simple heating control using Tasmota Rules. To do this, open Tasmota Console and enter following commands:
+- `Rule1 1`
+- `Rule2 1`
+- `Rule1 ON Tele-DS18B20#Temperature<55 DO Power1 1 ENDON`
+- `Rule2 ON Tele-DS18B20#Temperature>65 DO Power1 0 ENDON`
+You can adjust target temperature and temperature hysteresis limits as per your requirements. This setup has target 60°C while allowing +/-5°C hysteresis.
+Note: berry scripting is not supported on ESP8266 devices.
 
 ## To do list
 - include WS2812b LED strip control
