@@ -73,6 +73,8 @@ It is possible to enable simple heating control using Tasmota Rules. To do this,
 - if you have **WS2812** add third rule to light it up when heating is active:
   - `Rule3 ON Power1#State=1 DO Power2 1 ENDON ON Power1#State=0 DO Power2 0 ENDON`
   - enable the rule: `Rule3 1`
+- to make it update correctly change **Logging interval** on your Tasmota to lowest possible value (10s) - **Configuration -> Configure Logging -> Telemetry Period**
+
 
 You can adjust target temperature and temperature hysteresis limits as per your requirements. The setup described above has target 60°C while allowing +/-5°C hysteresis.
 Note: berry scripting is not supported on ESP8266 devices.
