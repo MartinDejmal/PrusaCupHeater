@@ -93,3 +93,5 @@ Note: berry scripting is not supported on ESP8266 devices.
 🔲 add 128x32 OLED display with temperature and status reading
 
 🔲 add cup presence detection
+
+🔲 leverage internal thermistor on the heatbed tile instead of DS18B20
