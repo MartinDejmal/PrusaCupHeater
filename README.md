@@ -4,6 +4,9 @@ PrusaCupHeater is a project aiming to utilize spare / waste heatbedlets (heat be
 
 The ultimate objective was to build a cup heater that can be powered from USB-C PD power supply and connected to Home Assistant. 
 
+Original idea and design by [Martin Velisek](https://x.com/martin_velisek) & [Martin Dejmal](https://x.com/KutilDomaci).
+
+
 ## Required parts
 
 * Prusa XL Heat Bed Tile (obviously)
